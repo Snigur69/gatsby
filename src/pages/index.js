@@ -1,4 +1,5 @@
 import * as React from "react"
+import Layout from "./containers/layout"
 
 // styles
 const pageStyles = {
@@ -42,14 +43,14 @@ const linkStyles = {
 // markup
 const IndexPage = ({data}) => {
   return (
-    <div>
+    <Layout>
       {data.allWordpressPost.nodes.map((node, index) => (
         <div key={index}>
           <h1>{node.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: node.content }} />
         </div>
       ))}
-    </div>
+    </Layout>
   )
 }
 
